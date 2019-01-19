@@ -16,7 +16,6 @@ import java.util.Set;
 @Builder
 @EqualsAndHashCode(of = {"login","password"})
 @Entity
-@ToString
 public class Account {
 
     @Id
@@ -26,7 +25,7 @@ public class Account {
     private String password;
 
     /*    @ManyToMany(mappedBy = "accounts", cascade = CascadeType.ALL)*/
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     //@JoinColumn(name = "role")
     private List <Role> roles = new ArrayList <>();
 
@@ -35,4 +34,11 @@ public class Account {
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

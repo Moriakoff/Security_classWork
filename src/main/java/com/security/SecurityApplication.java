@@ -29,8 +29,9 @@ public class SecurityApplication implements CommandLineRunner {
         /*
         * Persist entities to DB
         * */
+/*
 
-/*        Account account1 = new Account("first", "first");
+        Account account1 = new Account("first", "first");
         Account account2 = new Account("Second", "Second");
         Account account3 = new Account("Third", "Third");
 
@@ -43,8 +44,9 @@ public class SecurityApplication implements CommandLineRunner {
         Role role2 = new Role("User");
 
         roleJpaRepository.save(role1);
-        roleJpaRepository.save(role2);*/
+        roleJpaRepository.save(role2);
 
+*/
 
         /*
         * Adding roles to account entities and search by role*/
@@ -57,7 +59,6 @@ public class SecurityApplication implements CommandLineRunner {
         Role role2 = roleJpaRepository.findById("User").orElse(new Role());
 
 
-        System.out.println(account1);
 
 
         account1.getRoles().add(role1);
@@ -72,7 +73,7 @@ public class SecurityApplication implements CommandLineRunner {
         accountJpaRepository.save(account2);
         accountJpaRepository.save(account3);
 
-        System.out.println(accountJpaRepository.findAccountsByRoles(new Role("Admin")));
+        //System.out.println(accountJpaRepository.findAccountsByRoles(role1));
 
 
     }
