@@ -25,6 +25,11 @@ public class SecurityApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+        /*
+        * Persist entities to DB
+        * */
+
 /*        Account account1 = new Account("first", "first");
         Account account2 = new Account("Second", "Second");
         Account account3 = new Account("Third", "Third");
@@ -39,6 +44,10 @@ public class SecurityApplication implements CommandLineRunner {
 
         roleJpaRepository.save(role1);
         roleJpaRepository.save(role2);*/
+
+
+        /*
+        * Adding roles to account entities and search by role*/
 
         Account account1 = accountJpaRepository.findById("first").orElse(new Account());
         Account account2 = accountJpaRepository.findById("Second").orElse(new Account());
